@@ -1,0 +1,32 @@
+import sqlite3
+
+conexaoDB = sqlite3.connect("meu_banco")
+
+cursor = conexaoDB.cursor()
+print(cursor)
+
+# cursor.execute("""
+# create TABLE agenda(
+# id integer primary key autoincrement,
+# nome text,
+# telefone text
+# )
+# """)
+
+# cursor.execute(
+# "INSERT INTO agenda VALUES(null, 'Joana', '3333-3333')"
+# )
+# conexaoDB.commit()
+
+# cursor.execute(
+# "INSERT INTO agenda VALUES(null, 'Antônio', '7777-7777')"
+# )
+# conexaoDB.commit()
+  
+# cursor.execute(
+# "INSERT INTO agenda VALUES(null, 'Maria', '4444-4444')"
+# )
+# conexaoDB.commit()
+
+cursor.execute("SELECT * FROM agenda")
+print(cursor.fetchall())
